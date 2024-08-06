@@ -10,7 +10,9 @@ print(id(a))
 
 #################################################
 
-#Every variable in Python holds and instance of an object.Whenever an object is instantiated, its assigned a unique object id . The type of the object id is defined at the runtime and it can't be changed afterward. However, its state can be changed if it is a mutable object. 
+#Every variable in Python holds and instance of an object.Whenever an object is instantiated, its assigned a unique object id . The type of the object id is defined at the runtime and it can't be changed afterward. However, its state can be changed if it is a mutable object.
+# Hash value of the Imutable objects remain constant
+# In multi-threaded environment, immutable objects are inherently thread-safe 
 #Immutable objects are of built in datatypes (int, float, bool, string, Unicode and tuple). 
 # # #
 # an immutable object cant be changed after it is created.
@@ -101,3 +103,37 @@ print(tup[1])
 a=10
 b=10
 print(id(a), id(b))
+
+##########################
+
+thisdict = {
+    "brand":"Ford",
+    "model":"Mustang",
+    "year":1964
+}
+print(thisdict)
+print(len(thisdict))
+#dict length starts from 0
+
+#as of python 3.7 dictionaries are ordered
+#We say dictionaries are ordered, it means that the items have a defined order, and that the order will not change.
+
+#Dictionaries are changeable, meaning that we can change, add or remove the items after the dictionary has been created
+
+
+
+thisdict = {
+    "brand":"Ford",
+    "model":"Mustang",
+    "model":"Mitsubishi",
+    "year":1964,
+    "year":2020
+}
+#Duplicates are not allowed in dictionaries and the first one will  be considered but the second duplicate or vice versa (in an online code comiler). Duplicate entry will neither be registered nor error would be thrown.
+
+print(type(thisdict))
+#the type of dictionary is dict
+
+thisdict = dict(name = "John", age = 36, country = "Norway")
+print(thisdict)
+#above is an example for the constructor dict()
