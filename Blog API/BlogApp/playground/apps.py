@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 class BlogAppConfig(AppConfig):
-    default.auto.field = 'django.db.model'
+    default_auto_field = 'django.db.model'
     name = 'playground'
