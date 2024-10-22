@@ -2,11 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-from django.conf import settings
-# added to remove error
 
-settings.configure()
-# added to remove error
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'blogapp.settings')
