@@ -30,11 +30,11 @@ SECRET_KEY = 'SECRET_KEY'
 DEBUG = (os.getenv('DJANGO_DEBUG', 'True') == "True")
 # print(DEBUG)
 TEMPLATE_DEBUG = DEBUG
-
-if not DEBUG:
+DEBUG = True
+if DEBUG:
     ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1','localhost','*']
-
-ALLOWED_HOSTS = []
+else:
+    ALLOWED_HOSTS = ['something for prod']
 
 
 # Application definition
