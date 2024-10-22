@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config
+import socket 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +25,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'SECRET_KEY'
 
+try:     
+    HOSTNAME=socket.gethostname() 
+    raise   Exception(HOSTNAME)
+except:     
+    HOSTNAME='localhost'
+    raise   Exception(HOSTNAME)
+except Exception as error:
+        print('Caught this error: ' + repr(error))
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 # DEBUG = (os.environ.get('DJANGO_DEBUG') == "True")
